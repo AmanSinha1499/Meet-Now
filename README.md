@@ -4,10 +4,6 @@
 Meet Now is a Video conferencing app based on peer to peer connection
 <br />
 <br />
-<br />
-
-<br />
-<br />
 
 ## features
 
