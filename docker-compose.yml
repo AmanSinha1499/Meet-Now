@@ -1,0 +1,52 @@
+version: "3.2"
+services:
+  teams-redis:
+    image: redis:5
+    expose:
+      - "6379"
+  backend:
+    build: ./backend
+    volumes:
+      - ./backend:/app/backend
+    ports:
+      - "7000:7000"
+      - "8001:8001"
+    stdin_open: true
+    tty: true
+    depends_on:
+      - teams-redis
+    environment:
+      - DJANGO_SETTINGS_MODULE=teams_backend.settings
+    command: ["supervisord", "-c", "supervisord.conf"]
+
+  reverse-proxy: 
+    build: ./nginx
+    restart: always
+    expose:
+      - "80"
+      - "443"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      
+      - type: bind
+        source: ./frontend/build
+        target: /frontend
+        read_only: true
+
+      - type: bind
+        source: ./cert
+        target: /cert
+        read_only: true
+
+      - type: volume
+        source: reverse_proxy_logs
+        target: /reverse_proxy_logs
+        read_only: false
+
+    depends_on:
+      - backend
+
+volumes:
+    reverse_proxy_logs:

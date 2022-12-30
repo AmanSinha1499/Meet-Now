@@ -1,0 +1,7 @@
+export const GET_USER_ERROR = 'GET_USER_ERROR';
+export  const GET_USER = "GET_USER";
+export  const GET_USER_PENDING = "GET_USER_PENDING";
+export const LOGIN_PENDING = "LOGIN_PENDING";
+export const SET_TOKEN = "SET_TOKEN";
+export const LOGGEDINORNOT = "LOGGEDINORNOT";
+export const GET_INVITATION = "GET_INVITATION";
