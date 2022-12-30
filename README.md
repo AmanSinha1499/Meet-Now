@@ -1,4 +1,3 @@
-<a><img height="40" src="./src/assets/images/solarised_light.png" align="right"></a>
 
 # Meet Now 👋
 
@@ -51,7 +50,3 @@ Meet Now is a Video conferencing app based on peer to peer connection
 
 - Waiting Room[![Waiting Room Page](./frontend/src/assets/images/waiting.png)](https://meetnow.tech/login/)
 
----
-
-- Website: http://ayu023ban.github.io/
-- Github: [@ayu023ban](https://github.com/ayu023ban)
